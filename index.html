@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Au Pois Gourmand - Meilleur Restaurant de Toulouse</title>
+    <title>Meilleurs Restaurants de Toulouse</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,92 +23,42 @@
             margin: 0 auto;
             padding: 2rem;
         }
-        .restaurant-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 2rem;
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        .restaurant-image {
-            flex: 1;
-            min-width: 300px;
+        .restaurants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+        .restaurant-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .restaurant-card:hover {
+            transform: translateY(-5px);
         }
         .restaurant-image img {
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 250px;
+            object-fit: cover;
         }
-        .restaurant-details {
-            flex: 2;
-            min-width: 300px;
+        .restaurant-content {
+            padding: 1.5rem;
         }
-        .rating {
+        .restaurant-rating {
             display: flex;
             align-items: center;
             margin-bottom: 1rem;
         }
         .stars {
             color: #FFD700;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-right: 0.5rem;
-        }
-        .reviews {
-            margin-top: 3rem;
-        }
-        .review {
-            background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .review-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        .review-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 1rem;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        .review-rating {
-            margin-left: auto;
-            color: #FFD700;
-        }
-        .menu-section {
-            margin-top: 3rem;
-        }
-        .menu-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .menu-item {
-            background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .menu-item h3 {
-            margin-top: 0;
-        }
-        .price {
-            font-weight: bold;
-            color: #4b0082;
-        }
-        .cta {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            background-color: #f0f0f0;
-            border-radius: 8px;
         }
         .btn {
             display: inline-block;
@@ -131,98 +81,63 @@
             margin-top: 2rem;
         }
         @media (max-width: 768px) {
-            .restaurant-info {
-                flex-direction: column;
+            .restaurants-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Au Pois Gourmand</h1>
-        <p>Restaurant Gastronomique à Toulouse</p>
+        <h1>Découvrez les Meilleurs Restaurants de Toulouse</h1>
+        <p>Expériences Gastronomiques d'Exception</p>
     </header>
 
     <div class="container">
-        <div class="restaurant-info">
-            <div class="restaurant-image">
-                <img src="https://via.placeholder.com/600x400" alt="Au Pois Gourmand Restaurant">
-            </div>
-            <div class="restaurant-details">
-                <h2>Le Meilleur Restaurant de Toulouse</h2>
-                <div class="rating">
-                    <div class="stars">★★★★★</div>
-                    <span>4.8/5 (4472 avis)</span>
-                </div>
-                <p>Au Pois Gourmand est un établissement gastronomique d'exception, reconnu comme le meilleur restaurant de Toulouse selon les avis Google Maps. Situé au cœur de la ville rose, notre restaurant vous propose une cuisine raffinée mettant en valeur les produits locaux et de saison.</p>
-                <p>Le Chef et son équipe vous invitent à découvrir une carte variée qui allie tradition et innovation culinaire. Chaque plat est pensé comme une œuvre d'art, tant pour les yeux que pour les papilles.</p>
-                <p><strong>Adresse:</strong> 12 Rue des Fleurs, 31000 Toulouse</p>
-                <p><strong>Horaires:</strong> Du mardi au samedi, 12h-14h et 19h-22h</p>
-                <p><strong>Réservation:</strong> 05 61 XX XX XX</p>
-            </div>
+        <div class="intro">
+            <h2>Bienvenue dans notre sélection des meilleurs restaurants toulousains</h2>
+            <p>Nous avons sélectionné pour vous les établissements les mieux notés de la ville rose, offrant une expérience culinaire exceptionnelle.</p>
         </div>
 
-        <div class="reviews">
-            <h2>Avis des clients</h2>
-            <div class="review">
-                <div class="review-header">
-                    <div class="review-avatar">MR</div>
-                    <div>
-                        <h3>Marie Rousseau</h3>
-                        <p>Il y a 2 semaines</p>
+        <div class="restaurants-grid">
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Au Pois Gourmand Restaurant">
+                </div>
+                <div class="restaurant-content">
+                    <h2>Au Pois Gourmand</h2>
+                    <div class="restaurant-rating">
+                        <div class="stars">★★★★★</div>
+                        <span>4.8/5 (4472 avis)</span>
                     </div>
-                    <div class="review-rating">★★★★★</div>
+                    <p>Restaurant gastronomique d'exception, reconnu pour sa cuisine raffinée mettant en valeur les produits locaux et de saison. Une expérience culinaire inoubliable au cœur de Toulouse.</p>
+                    <p><strong>Cuisine:</strong> Gastronomique française</p>
+                    <p><strong>Adresse:</strong> 12 Rue des Fleurs, 31000 Toulouse</p>
+                    <a href="pois-gourmand.html" class="btn">Découvrir</a>
                 </div>
-                <p>Une expérience inoubliable ! Le menu dégustation est un véritable voyage gustatif. Chaque plat est une surprise et un délice. Le service est impeccable, attentionné sans être intrusif. L'ambiance est élégante et chaleureuse. Un restaurant qui mérite amplement sa réputation d'excellence. Nous reviendrons très certainement pour notre prochain anniversaire de mariage.</p>
             </div>
-            <div class="review">
-                <div class="review-header">
-                    <div class="review-avatar">PT</div>
-                    <div>
-                        <h3>Pierre Thibault</h3>
-                        <p>Il y a 1 mois</p>
+
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://via.placeholder.com/600x400" alt="La Pergola Restaurant">
+                </div>
+                <div class="restaurant-content">
+                    <h2>La Pergola</h2>
+                    <div class="restaurant-rating">
+                        <div class="stars">★★★★☆</div>
+                        <span>4.7/5 (3854 avis)</span>
                     </div>
-                    <div class="review-rating">★★★★★</div>
-                </div>
-                <p>En tant que gastronome exigeant, je dois dire que Au Pois Gourmand est une véritable pépite à Toulouse. Les associations de saveurs sont audacieuses mais toujours justes, les cuissons parfaites et les présentations élégantes sans être prétentieuses. La carte des vins est remarquable avec de belles découvertes régionales. Le rapport qualité-prix est excellent compte tenu du niveau de cuisine proposé. Une adresse à conserver précieusement!</p>
-            </div>
-        </div>
-
-        <div class="menu-section">
-            <h2>Notre Menu</h2>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <h3>Entrées</h3>
-                    <p>Foie gras de canard mi-cuit, chutney de figues</p>
-                    <p class="price">22€</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Plats</h3>
-                    <p>Filet de bœuf Rossini, pommes Anna, jus truffé</p>
-                    <p class="price">34€</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Desserts</h3>
-                    <p>Sphère chocolat, cœur coulant caramel, crumble noisette</p>
-                    <p class="price">14€</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Menu Dégustation</h3>
-                    <p>Voyage en 7 services au gré des inspirations du Chef</p>
-                    <p class="price">85€</p>
+                    <p>Véritable institution toulousaine, La Pergola vous fait voyager en Italie avec ses plats authentiques et savoureux. Un cadre chaleureux et une ambiance conviviale vous attendent dans ce joyau de la cuisine italienne.</p>
+                    <p><strong>Cuisine:</strong> Italienne traditionnelle</p>
+                    <p><strong>Adresse:</strong> 25 Avenue de la Méditerranée, 31000 Toulouse</p>
+                    <a href="la-pergola.html" class="btn">Découvrir</a>
                 </div>
             </div>
-        </div>
-
-        <div class="cta">
-            <h2>Envie de découvrir notre cuisine?</h2>
-            <p>Réservez dès maintenant pour vivre une expérience gastronomique inoubliable</p>
-            <a href="#" class="btn">Réserver une table</a>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Au Pois Gourmand - Restaurant Gastronomique à Toulouse</p>
+        <p>&copy; 2025 Meilleurs Restaurants de Toulouse - Guide Gastronomique</p>
     </footer>
 </body>
 </html>
