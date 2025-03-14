@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Table Occitane - Restaurant Traditionnel de Toulouse</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #8B4513;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .restaurant-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .restaurant-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .restaurant-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .restaurant-details {
+            flex: 2;
+            min-width: 300px;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .stars {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+        .reviews {
+            margin-top: 3rem;
+        }
+        .review {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .review-rating {
+            margin-left: auto;
+            color: #FFD700;
+        }
+        .menu-section {
+            margin-top: 3rem;
+        }
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .menu-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .menu-item h3 {
+            margin-top: 0;
+        }
+        .price {
+            font-weight: bold;
+            color: #8B4513;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #8B4513;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #a0522d;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .nav-link {
+            margin-top: 1rem;
+        }
+        .nav-link a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+        .nav-link a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        @media (max-width: 768px) {
+            .restaurant-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>La Table Occitane</h1>
+        <p>Restaurant Traditionnel à Toulouse</p>
+        <div class="nav-link">
+            <a href="index.html">Voir Au Pois Gourmand</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="restaurant-info">
+            <div class="restaurant-image">
+                <img src="https://via.placeholder.com/600x400" alt="La Table Occitane Restaurant">
+            </div>
+            <div class="restaurant-details">
+                <h2>La Cuisine Traditionnelle de Toulouse</h2>
+                <div class="rating">
+                    <div class="stars">★★★★☆</div>
+                    <span>4.6/5 (3251 avis)</span>
+                </div>
+                <p>La Table Occitane est un restaurant chaleureux et authentique qui met à l'honneur la cuisine traditionnelle toulousaine. Dans une ambiance conviviale et rustique, nos chefs vous proposent des plats emblématiques de la région, préparés avec des produits frais et locaux.</p>
+                <p>Cassoulet, saucisse de Toulouse, foie gras... Des recettes ancestrales revisitées avec respect et passion pour vous offrir une expérience culinaire mémorable au cœur de la ville rose.</p>
+                <p><strong>Adresse:</strong> 28 Rue des Marchands, 31000 Toulouse</p>
+                <p><strong>Horaires:</strong> Tous les jours, 12h-14h30 et 19h-22h30</p>
+                <p><strong>Réservation:</strong> 05 61 XX XX XX</p>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h2>Avis des clients</h2>
+            <div class="review">
+                <div class="review-header">
+                    <div class="review-avatar">JD</div>
+                    <div>
+                        <h3>Jean Dupont</h3>
+                        <p>Il y a 1 semaine</p>
+                    </div>
+                    <div class="review-rating">★★★★★</div>
+                </div>
+                <p>Je cherchais un restaurant typique toulousain pour faire découvrir la gastronomie locale à mes amis étrangers. La Table Occitane était le lieu parfait ! Le cassoulet était divin, peut-être le meilleur que j'ai jamais mangé. L'accueil était très chaleureux et le service attentionné. Mes amis sont repartis conquis par la cuisine occitane.</p>
+            </div>
+            <div class="review">
+                <div class="review-header">
+                    <div class="review-avatar">LM</div>
+                    <div>
+                        <h3>Lucie Martin</h3>
+                        <p>Il y a 3 semaines</p>
+                    </div>
+                    <div class="review-rating">★★★★☆</div>
+                </div>
+                <p>Une adresse incontournable pour goûter la vraie cuisine toulousaine. L'ambiance est authentique, on se sent comme à la maison. J'ai particulièrement apprécié leur saucisse de Toulouse aux haricots blancs et leur aligot fait maison. Les portions sont généreuses et les prix raisonnables. La carte des vins propose de belles références locales. Seul petit bémol, le restaurant est victime de son succès et peut être un peu bruyant les soirs de week-end.</p>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Notre Menu</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h3>Entrées</h3>
+                    <p>Salade gasconne (gésiers confits, magret fumé, noix)</p>
+                    <p class="price">12€</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Plats</h3>
+                    <p>Cassoulet traditionnel toulousain</p>
+                    <p class="price">18€</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Desserts</h3>
+                    <p>Croustade aux pommes, glace vanille</p>
+                    <p class="price">8€</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Menu du Terroir</h3>
+                    <p>Entrée + Plat + Dessert</p>
+                    <p class="price">32€</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Envie de goûter la vraie cuisine toulousaine?</h2>
+            <p>Réservez dès maintenant pour découvrir nos spécialités régionales</p>
+            <a href="#" class="btn">Réserver une table</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 La Table Occitane - Restaurant Traditionnel à Toulouse</p>
+    </footer>
+</body>
+</html>
