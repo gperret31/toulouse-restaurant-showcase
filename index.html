@@ -8,102 +8,318 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #5e2699;
+            --primary-color-dark: #4b2080;
+            --primary-color-light: rgba(94, 38, 153, 0.1);
+            --gold: #FFD700;
+            --text-color: #333;
+            --light-color: #f8f8f8;
+            --transition: all 0.3s ease;
+        }
+        
         body {
             font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
         }
+        
         h1, h2, h3, h4, h5 {
             font-family: 'Playfair Display', serif;
         }
+        
+        /* Utility Classes */
         .bg-purple {
-            background-color: #5e2699 !important;
+            background-color: var(--primary-color) !important;
         }
+        
         .text-purple {
-            color: #5e2699 !important;
+            color: var(--primary-color) !important;
         }
+        
         .btn-purple {
-            background-color: #5e2699;
+            background-color: var(--primary-color);
             color: white;
+            transition: var(--transition);
         }
+        
         .btn-purple:hover {
-            background-color: #4b2080;
+            background-color: var(--primary-color-dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline-purple {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background-color: transparent;
+            transition: var(--transition);
+        }
+        
+        .btn-outline-purple:hover {
+            background-color: var(--primary-color);
             color: white;
         }
+        
+        .btn-lg {
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+        }
+        
         .stars {
-            color: #FFD700;
+            color: var(--gold);
             font-size: 1.2rem;
         }
+        
+        /* Sections */
         .hero {
-            background: linear-gradient(rgba(94, 38, 153, 0.7), rgba(94, 38, 153, 0.8)), url('https://via.placeholder.com/1920x1080');
+            position: relative;
+            background: linear-gradient(rgba(94, 38, 153, 0.8), rgba(94, 38, 153, 0.8)), url('https://via.placeholder.com/1920x1080');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 150px 0;
+            padding: 11rem 0 8rem;
+            text-align: center;
+            margin-bottom: 2rem;
         }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 8rem 0 5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
         .card {
-            transition: transform 0.3s;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            height: 100%;
         }
+        
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
+        
         .navbar {
-            transition: all 0.3s;
+            transition: var(--transition);
+            padding: 1rem 0;
         }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+        
+        .navbar-nav .nav-link:hover::after {
+            width: 70%;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
+        }
+        
         .avatar-circle {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: #5e2699;
+            background-color: var(--primary-color);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            flex-shrink: 0;
         }
+        
         .menu-price {
-            color: #5e2699;
+            color: var(--primary-color);
             font-weight: bold;
             font-size: 1.2rem;
         }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+        }
+        
         footer a {
             color: rgba(255,255,255,0.7);
             text-decoration: none;
+            transition: var(--transition);
         }
+        
         footer a:hover {
             color: white;
         }
+        
         .social-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.1);
             color: white;
             border-radius: 50%;
             margin-right: 10px;
-            transition: all 0.3s;
+            transition: var(--transition);
         }
+        
         .social-icon:hover {
             background-color: white;
-            color: #5e2699;
+            color: var(--primary-color);
             transform: translateY(-3px);
         }
+        
+        /* Form elements */
         .form-control:focus, .form-select:focus {
-            border-color: #5e2699;
+            border-color: var(--primary-color);
             box-shadow: 0 0 0 0.25rem rgba(94, 38, 153, 0.25);
         }
+        
         .form-label {
             font-weight: 500;
         }
+        
         .modal-header {
-            background-color: #5e2699;
+            background-color: var(--primary-color);
             color: white;
         }
+        
         .reservation-success {
             display: none;
+        }
+        
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Info Card */
+        .info-card {
+            background-color: var(--light-color);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 2rem;
+            height: 100%;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                background-color: var(--primary-color);
+                padding: 1rem;
+                border-radius: 8px;
+                margin-top: 1rem;
+            }
+            
+            .review-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .review-header .stars {
+                margin-top: 0.5rem;
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            .display-4 {
+                font-size: 2.5rem;
+            }
+            
+            .lead {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .review-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .menu-item {
+                margin-bottom: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -112,7 +328,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-purple">
         <div class="container">
             <a class="navbar-brand" href="index.html">Au Pois Gourmand</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -135,24 +351,39 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero text-center">
+    <section class="hero">
         <div class="container">
             <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeIn">Au Pois Gourmand</h1>
-            <p class="lead mb-5 animate__animated animate__fadeIn">Une expérience gastronomique d'exception au cœur de Toulouse</p>
-            <a href="#" class="btn btn-light btn-lg px-5 py-3 fw-bold shadow animate__animated animate__fadeIn" data-bs-toggle="modal" data-bs-target="#reservationModal">Réserver une table</a>
+            <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Une expérience gastronomique d'exception au cœur de Toulouse</p>
+            <div class="d-grid gap-2 d-md-block">
+                <a href="#" class="btn btn-light btn-lg px-4 me-md-2 animate__animated animate__fadeIn animate__delay-1s" data-bs-toggle="modal" data-bs-target="#reservationModal">
+                    <i class="fas fa-calendar-check me-2"></i>Réserver une table
+                </a>
+                <a href="#menu" class="btn btn-outline-light btn-lg px-4 animate__animated animate__fadeIn animate__delay-1s">
+                    <i class="fas fa-utensils me-2"></i>Voir le menu
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Restaurant Info -->
-    <section class="py-5">
+    <section class="py-5 section-padding" id="about">
         <div class="container">
             <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <img src="https://via.placeholder.com/600x400" alt="Au Pois Gourmand Restaurant" class="img-fluid rounded shadow-lg">
+                <div class="col-lg-6 fade-up">
+                    <div class="position-relative">
+                        <img src="https://via.placeholder.com/600x400" alt="Au Pois Gourmand Restaurant" class="img-fluid rounded-3 shadow-lg">
+                        <div class="position-absolute top-0 start-0 translate-middle bg-white p-2 rounded-pill shadow-sm d-none d-md-block">
+                            <div class="d-flex align-items-center">
+                                <div class="stars me-2">★★★★★</div>
+                                <span class="fw-bold">4.8/5</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <h2 class="mb-4">Le Meilleur Restaurant de Toulouse</h2>
-                    <div class="d-flex align-items-center mb-4">
+                <div class="col-lg-6 fade-up">
+                    <h2 class="mb-4 fw-bold">Le Meilleur Restaurant de Toulouse</h2>
+                    <div class="d-flex align-items-center mb-4 d-md-none">
                         <div class="stars me-2">★★★★★</div>
                         <span>4.8/5 (4472 avis)</span>
                     </div>
@@ -160,9 +391,15 @@
                     <p class="mb-5">Le Chef et son équipe vous invitent à découvrir une carte variée qui allie tradition et innovation culinaire. Chaque plat est pensé comme une œuvre d'art, tant pour les yeux que pour les papilles.</p>
                     
                     <div class="card shadow-sm p-4 bg-light" id="contact">
-                        <h3 class="mb-4">Informations pratiques</h3>
-                        <p class="mb-3"><i class="fas fa-map-marker-alt text-purple me-2"></i> <strong>Adresse:</strong> 12 Rue des Fleurs, 31000 Toulouse</p>
-                        <p class="mb-3"><i class="fas fa-clock text-purple me-2"></i> <strong>Horaires:</strong> Du mardi au samedi, 12h-14h et 19h-22h</p>
+                        <h3 class="mb-4 fw-bold fs-4">Informations pratiques</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <p class="mb-3"><i class="fas fa-map-marker-alt text-purple me-2"></i> <strong>Adresse:</strong><br class="d-md-none"> 12 Rue des Fleurs, 31000 Toulouse</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="mb-3"><i class="fas fa-clock text-purple me-2"></i> <strong>Horaires:</strong><br class="d-md-none"> Du mardi au samedi, 12h-14h et 19h-22h</p>
+                            </div>
+                        </div>
                         <p class="mb-0"><i class="fas fa-phone text-purple me-2"></i> <strong>Réservation:</strong> 05 61 XX XX XX</p>
                     </div>
                 </div>
@@ -171,17 +408,17 @@
     </section>
 
     <!-- Reviews Section -->
-    <section class="py-5 bg-light" id="reviews">
+    <section class="py-5 section-padding bg-light" id="reviews">
         <div class="container">
-            <h2 class="text-center mb-5">Ce que nos clients disent</h2>
+            <h2 class="text-center mb-5 section-title">Ce que nos clients disent</h2>
             <div class="row g-4">
-                <div class="col-md-6">
+                <div class="col-md-6 fade-up">
                     <div class="card h-100 shadow">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-4">
                                 <div class="avatar-circle me-3">MR</div>
                                 <div>
-                                    <h5 class="mb-0">Marie Rousseau</h5>
+                                    <h5 class="mb-0 fw-bold">Marie Rousseau</h5>
                                     <p class="text-muted mb-0 small">Il y a 2 semaines</p>
                                 </div>
                                 <div class="stars ms-auto">★★★★★</div>
@@ -190,13 +427,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 fade-up">
                     <div class="card h-100 shadow">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-4">
                                 <div class="avatar-circle me-3">PT</div>
                                 <div>
-                                    <h5 class="mb-0">Pierre Thibault</h5>
+                                    <h5 class="mb-0 fw-bold">Pierre Thibault</h5>
                                     <p class="text-muted mb-0 small">Il y a 1 mois</p>
                                 </div>
                                 <div class="stars ms-auto">★★★★★</div>
@@ -210,140 +447,180 @@
     </section>
 
     <!-- Menu Section -->
-    <section class="py-5" id="menu">
+    <section class="py-5 section-padding" id="menu">
         <div class="container">
-            <h2 class="text-center mb-5">Notre Menu</h2>
+            <h2 class="text-center mb-5 section-title">Notre Menu</h2>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm text-center">
-                        <div class="card-body">
-                            <h3 class="card-title">Entrées</h3>
+                <div class="col-md-6 col-lg-3 fade-up">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-leaf text-purple fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h4 fw-bold">Entrées</h3>
                             <p class="card-text my-4">Foie gras de canard mi-cuit, chutney de figues</p>
-                            <p class="menu-price">22€</p>
+                            <div class="menu-price rounded-pill bg-purple bg-opacity-10 px-3 py-2 d-inline-block">
+                                22€
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm text-center">
-                        <div class="card-body">
-                            <h3 class="card-title">Plats</h3>
+                <div class="col-md-6 col-lg-3 fade-up">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-drumstick-bite text-purple fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h4 fw-bold">Plats</h3>
                             <p class="card-text my-4">Filet de bœuf Rossini, pommes Anna, jus truffé</p>
-                            <p class="menu-price">34€</p>
+                            <div class="menu-price rounded-pill bg-purple bg-opacity-10 px-3 py-2 d-inline-block">
+                                34€
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm text-center">
-                        <div class="card-body">
-                            <h3 class="card-title">Desserts</h3>
+                <div class="col-md-6 col-lg-3 fade-up">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-ice-cream text-purple fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h4 fw-bold">Desserts</h3>
                             <p class="card-text my-4">Sphère chocolat, cœur coulant caramel, crumble noisette</p>
-                            <p class="menu-price">14€</p>
+                            <div class="menu-price rounded-pill bg-purple bg-opacity-10 px-3 py-2 d-inline-block">
+                                14€
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm text-center">
-                        <div class="card-body">
-                            <h3 class="card-title">Menu Dégustation</h3>
+                <div class="col-md-6 col-lg-3 fade-up">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-purple fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h4 fw-bold">Menu Dégustation</h3>
                             <p class="card-text my-4">Voyage en 7 services au gré des inspirations du Chef</p>
-                            <p class="menu-price">85€</p>
+                            <div class="menu-price rounded-pill bg-purple bg-opacity-10 px-3 py-2 d-inline-block">
+                                85€
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-purple btn-lg" data-bs-toggle="modal" data-bs-target="#menuCompleteModal">
+                    Voir la carte complète <i class="fas fa-chevron-right ms-2"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-5 my-5 bg-light">
+    <section class="py-5 my-5 bg-light section-padding">
         <div class="container">
-            <div class="bg-purple text-white p-5 rounded-4 shadow text-center">
-                <h2 class="mb-4">Envie de découvrir notre cuisine?</h2>
+            <div class="bg-purple text-white p-4 p-md-5 rounded-4 shadow text-center">
+                <h2 class="mb-4 fw-bold">Envie de découvrir notre cuisine?</h2>
                 <p class="lead mb-4">Réservez dès maintenant pour vivre une expérience gastronomique inoubliable</p>
-                <a href="#" class="btn btn-light btn-lg px-5 fw-bold" data-bs-toggle="modal" data-bs-target="#reservationModal">Réserver une table</a>
+                <a href="#" class="btn btn-light btn-lg px-5 fw-bold" data-bs-toggle="modal" data-bs-target="#reservationModal">
+                    <i class="fas fa-calendar-check me-2"></i>Réserver une table
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Réservation Modal -->
     <div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
                 <div class="modal-header bg-purple text-white">
                     <h5 class="modal-title" id="reservationModalLabel">Réserver une table - Au Pois Gourmand</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body p-4">
                     <form id="reservationForm" class="needs-validation" novalidate>
                         <div class="reservation-form">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Nom complet</label>
-                                <input type="text" class="form-control" id="name" required>
-                                <div class="invalid-feedback">
-                                    Veuillez indiquer votre nom.
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Nom complet</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                    <div class="invalid-feedback">
+                                        Veuillez indiquer votre nom.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">
+                                        Veuillez indiquer un email valide.
+                                    </div>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
-                                <div class="invalid-feedback">
-                                    Veuillez indiquer un email valide.
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Téléphone</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                    <div class="invalid-feedback">
+                                        Veuillez indiquer votre numéro de téléphone.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="guests" class="form-label">Nombre de personnes</label>
+                                    <select class="form-select" id="guests" required>
+                                        <option value="" selected disabled>Sélectionnez</option>
+                                        <option value="1">1 personne</option>
+                                        <option value="2">2 personnes</option>
+                                        <option value="3">3 personnes</option>
+                                        <option value="4">4 personnes</option>
+                                        <option value="5">5 personnes</option>
+                                        <option value="6">6 personnes</option>
+                                        <option value="7">7 personnes</option>
+                                        <option value="8">8 personnes</option>
+                                        <option value="more">Plus de 8 personnes</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Veuillez sélectionner le nombre de personnes.
+                                    </div>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Téléphone</label>
-                                <input type="tel" class="form-control" id="phone" required>
-                                <div class="invalid-feedback">
-                                    Veuillez indiquer votre numéro de téléphone.
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="date" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="date" required>
+                                    <div class="invalid-feedback">
+                                        Veuillez sélectionner une date.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="time" class="form-label">Heure</label>
+                                    <select class="form-select" id="time" required>
+                                        <option value="" selected disabled>Sélectionnez</option>
+                                        <optgroup label="Déjeuner">
+                                            <option value="12:00">12:00</option>
+                                            <option value="12:30">12:30</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="13:30">13:30</option>
+                                        </optgroup>
+                                        <optgroup label="Dîner">
+                                            <option value="19:00">19:00</option>
+                                            <option value="19:30">19:30</option>
+                                            <option value="20:00">20:00</option>
+                                            <option value="20:30">20:30</option>
+                                            <option value="21:00">21:00</option>
+                                            <option value="21:30">21:30</option>
+                                        </optgroup>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Veuillez sélectionner une heure.
+                                    </div>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="guests" class="form-label">Nombre de personnes</label>
-                                <select class="form-select" id="guests" required>
-                                    <option value="" selected disabled>Sélectionnez</option>
-                                    <option value="1">1 personne</option>
-                                    <option value="2">2 personnes</option>
-                                    <option value="3">3 personnes</option>
-                                    <option value="4">4 personnes</option>
-                                    <option value="5">5 personnes</option>
-                                    <option value="6">6 personnes</option>
-                                    <option value="7">7 personnes</option>
-                                    <option value="8">8 personnes</option>
-                                    <option value="more">Plus de 8 personnes</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Veuillez sélectionner le nombre de personnes.
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="date" class="form-label">Date</label>
-                                <input type="date" class="form-control" id="date" required>
-                                <div class="invalid-feedback">
-                                    Veuillez sélectionner une date.
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="time" class="form-label">Heure</label>
-                                <select class="form-select" id="time" required>
-                                    <option value="" selected disabled>Sélectionnez</option>
-                                    <option value="12:00">12:00</option>
-                                    <option value="12:30">12:30</option>
-                                    <option value="13:00">13:00</option>
-                                    <option value="13:30">13:30</option>
-                                    <option value="19:00">19:00</option>
-                                    <option value="19:30">19:30</option>
-                                    <option value="20:00">20:00</option>
-                                    <option value="20:30">20:30</option>
-                                    <option value="21:00">21:00</option>
-                                    <option value="21:30">21:30</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Veuillez sélectionner une heure.
-                                </div>
-                            </div>
+                            
                             <div class="mb-3">
                                 <label for="specialRequests" class="form-label">Demandes spéciales (optionnel)</label>
-                                <textarea class="form-control" id="specialRequests" rows="3"></textarea>
+                                <textarea class="form-control" id="specialRequests" rows="3" placeholder="Allergies, occasion spéciale, etc."></textarea>
                             </div>
                         </div>
                         
@@ -352,10 +629,11 @@
                                 <i class="fas fa-check-circle text-success fa-4x"></i>
                             </div>
                             <h3 class="mb-3">Réservation Confirmée!</h3>
-                            <p>Votre table a été réservée avec succès. Vous recevrez un mail de confirmation dans quelques minutes.</p>
+                            <p>Votre table a été réservée avec succès. Vous recevrez un email de confirmation dans quelques minutes.</p>
                         </div>
                         
                         <div class="text-end mt-4">
+                            <button type="button" class="btn btn-outline-secondary me-2" data-bs-dismiss="modal">Annuler</button>
                             <button type="submit" class="btn btn-purple px-4">Confirmer la réservation</button>
                         </div>
                     </form>
@@ -368,34 +646,48 @@
     <footer class="bg-dark text-white py-5">
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-4">
-                    <h5 class="mb-4">Au Pois Gourmand</h5>
+                <div class="col-md-4 col-lg-4">
+                    <h5 class="mb-4 fw-bold">Au Pois Gourmand</h5>
                     <p>Restaurant Gastronomique à Toulouse</p>
-                    <p>Une cuisine d'exception qui ravira vos papilles dans un cadre élégant et raffiné.</p>
+                    <p class="mb-0">Une cuisine d'exception qui ravira vos papilles dans un cadre élégant et raffiné.</p>
                 </div>
-                <div class="col-md-4">
-                    <h5 class="mb-4">Liens Rapides</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">Accueil</a></li>
-                        <li class="mb-2"><a href="#menu">Menu</a></li>
-                        <li class="mb-2"><a href="#reviews">Avis</a></li>
-                        <li class="mb-2"><a href="#contact">Contact</a></li>
-                        <li><a href="la-table-occitane.html">La Table Occitane</a></li>
-                    </ul>
+                <div class="col-md-4 col-lg-4">
+                    <h5 class="mb-4 fw-bold">Liens Rapides</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#">Accueil</a></li>
+                                <li class="mb-2"><a href="#menu">Menu</a></li>
+                                <li class="mb-2"><a href="#reviews">Avis</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#contact">Contact</a></li>
+                                <li class="mb-2"><a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal">Réservation</a></li>
+                                <li><a href="la-table-occitane.html">La Table Occitane</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h5 class="mb-4">Suivez-nous</h5>
+                <div class="col-md-4 col-lg-4">
+                    <h5 class="mb-4 fw-bold">Suivez-nous</h5>
                     <p>Restez connectés pour nos dernières actualités et événements spéciaux</p>
                     <div class="mt-4">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
             <hr class="mt-5">
-            <div class="text-center mt-4">
-                <p>&copy; 2025 Au Pois Gourmand - Restaurant Gastronomique à Toulouse</p>
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; 2025 Au Pois Gourmand - Restaurant Gastronomique à Toulouse</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0"><a href="#" class="text-decoration-none">Mentions légales</a> | <a href="#" class="text-decoration-none">Politique de confidentialité</a></p>
+                </div>
             </div>
         </div>
     </footer>
@@ -406,15 +698,50 @@
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
                 navbar.style.background = 'rgba(94, 38, 153, 0.95)';
-                navbar.style.padding = '10px 0';
                 navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             } else {
+                navbar.style.padding = '1rem 0';
                 navbar.style.background = '#5e2699';
-                navbar.style.padding = '16px 0';
                 navbar.style.boxShadow = 'none';
             }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if(this.getAttribute('href') !== '#' && this.getAttribute('href') !== '#reservationModal') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Set min date for reservation to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').setAttribute('min', today);
         });
 
         // Form validation
