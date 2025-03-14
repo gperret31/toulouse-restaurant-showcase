@@ -1,11 +1,14 @@
 # Restaurant Toulouse Showcase
 
 ## Description
-Cette page web présente "Au Pois Gourmand", reconnu comme l'un des meilleurs restaurants de Toulouse selon les avis Google Maps avec une note exceptionnelle de 4.8/5 sur plus de 4400 avis.
+Ce projet présente deux des meilleurs restaurants de Toulouse :
+- "Au Pois Gourmand" - Restaurant gastronomique reconnu avec une note exceptionnelle de 4.8/5 sur plus de 4400 avis
+- "La Table Occitane" - Restaurant traditionnel proposant des spécialités toulousaines avec une note de 4.6/5 sur plus de 3200 avis
 
 ## Fonctionnalités
 - Design responsive adaptable à tous les appareils
-- Présentation du restaurant et de ses informations essentielles
+- Présentation des restaurants et de leurs informations essentielles
+- Navigation entre les pages des deux restaurants
 - Affichage des avis clients issus de Google Maps
 - Menu des spécialités culinaires
 - Section d'appel à l'action pour les réservations
@@ -23,8 +26,9 @@ Cette page web présente "Au Pois Gourmand", reconnu comme l'un des meilleurs re
 ## Structure du projet
 ```
 toulouse-restaurant-showcase/
-├── index.html      # Page principale du site
-└── README.md       # Documentation
+├── index.html                # Page du restaurant Au Pois Gourmand
+├── la-table-occitane.html    # Page du restaurant La Table Occitane
+└── README.md                 # Documentation
 ```
 
 ## Bonnes pratiques implémentées
@@ -33,6 +37,7 @@ toulouse-restaurant-showcase/
 - **Responsive design**: Adaptation à tous les appareils avec des media queries
 - **Performance**: CSS intégré pour minimiser les requêtes HTTP
 - **Accessibilité**: Contraste des couleurs optimisé, textes alternatifs sur les images
+- **Navigation intuitive**: Liens entre les pages des restaurants pour une meilleure expérience utilisateur
 
 ## Licence
 Projet créé à des fins de démonstration.
