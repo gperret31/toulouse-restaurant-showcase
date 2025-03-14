@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Pergola - Restaurant Italien Authentique à Toulouse</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #006400;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #008000;
+            padding: 0.5rem 2rem;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .restaurant-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .restaurant-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .restaurant-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .restaurant-details {
+            flex: 2;
+            min-width: 300px;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .stars {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+        .reviews {
+            margin-top: 3rem;
+        }
+        .review {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .review-rating {
+            margin-left: auto;
+            color: #FFD700;
+        }
+        .menu-section {
+            margin-top: 3rem;
+        }
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .menu-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .menu-item h3 {
+            margin-top: 0;
+        }
+        .price {
+            font-weight: bold;
+            color: #006400;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #006400;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #008000;
+        }
+        .highlight {
+            background-color: #f8f9fa;
+            border-left: 4px solid #006400;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .restaurant-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>La Pergola</h1>
+        <p>Restaurant Italien Authentique à Toulouse</p>
+    </header>
+
+    <div class="navbar">
+        <a href="index.html">Accueil</a>
+        <a href="pois-gourmand.html">Au Pois Gourmand</a>
+    </div>
+
+    <div class="container">
+        <div class="restaurant-info">
+            <div class="restaurant-image">
+                <img src="https://via.placeholder.com/600x400" alt="La Pergola Restaurant">
+            </div>
+            <div class="restaurant-details">
+                <h2>L'Italie Authentique à Toulouse</h2>
+                <div class="rating">
+                    <div class="stars">★★★★☆</div>
+                    <span>4.7/5 (3854 avis)</span>
+                </div>
+                <p>La Pergola est une véritable institution toulousaine depuis plus de 25 ans. Notre établissement vous propose un voyage gustatif au cœur de l'Italie, avec des recettes authentiques transmises de génération en génération.</p>
+                <p>Nos chefs, tous originaires d'Italie, utilisent exclusivement des produits frais et importés directement des meilleures régions italiennes. Nos pâtes sont faites maison, notre mozzarella est produite chaque jour, et notre pizza sort d'un four à bois traditionnel.</p>
+                <div class="highlight">
+                    <p>"Le meilleur restaurant italien de Toulouse, sans aucun doute. Une expérience culinaire qui vous transporte directement en Italie." - Guide Michelin 2024</p>
+                </div>
+                <p><strong>Adresse:</strong> 25 Avenue de la Méditerranée, 31000 Toulouse</p>
+                <p><strong>Horaires:</strong> Tous les jours, 12h-14h30 et 19h-22h30</p>
+                <p><strong>Réservation:</strong> 05 61 XX XX XX</p>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h2>Avis des clients</h2>
+            <div class="review">
+                <div class="review-header">
+                    <div class="review-avatar">SL</div>
+                    <div>
+                        <h3>Sophie Laurent</h3>
+                        <p>Il y a 1 semaine</p>
+                    </div>
+                    <div class="review-rating">★★★★★</div>
+                </div>
+                <p>Quelle découverte ! Les pâtes à la truffe sont tout simplement divines, la burrata est crémeuse à souhait et le tiramisu... le meilleur que j'ai jamais goûté ! L'ambiance est chaleureuse avec une belle terrasse ombragée, idéale pour les soirées d'été. Le service est impeccable et les serveurs connaissent parfaitement la carte. Un vrai petit coin d'Italie à Toulouse.</p>
+            </div>
+            <div class="review">
+                <div class="review-header">
+                    <div class="review-avatar">JD</div>
+                    <div>
+                        <h3>Jean Dupont</h3>
+                        <p>Il y a 3 semaines</p>
+                    </div>
+                    <div class="review-rating">★★★★☆</div>
+                </div>
+                <p>La Pergola est notre restaurant italien préféré à Toulouse. Nous y allons régulièrement en famille. Les enfants adorent leurs pizzas et nous apprécions la qualité constante des plats. Le risotto est particulièrement savoureux et la carte des vins propose d'excellents crus italiens. Seul petit bémol, il faut souvent réserver plusieurs jours à l'avance pour obtenir une table le week-end. Preuve de son succès !</p>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Notre Menu</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h3>Antipasti</h3>
+                    <p>Burrata crémeuse, tomates anciennes, basilic frais</p>
+                    <p class="price">16€</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Pasta</h3>
+                    <p>Tagliatelles à la truffe fraîche et crème de parmesan</p>
+                    <p class="price">26€</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Pizza</h3>
+                    <p>Regina authentique au feu de bois, mozzarella maison</p>
+                    <p class="price">18€</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Dolci</h3>
+                    <p>Tiramisu traditionnel au mascarpone et café italien</p>
+                    <p class="price">12€</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Envie d'un voyage gustatif en Italie?</h2>
+            <p>Réservez votre table et laissez-vous transporter par nos saveurs authentiques</p>
+            <a href="#" class="btn">Réserver une table</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 La Pergola - Restaurant Italien à Toulouse</p>
+    </footer>
+</body>
+</html>
