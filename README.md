@@ -1,37 +1,62 @@
-# Restaurant Toulouse Showcase
+# Restaurants Toulouse Showcase
 
-## Description
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+## 🍽️ Description
 Ce projet présente deux des meilleurs restaurants de Toulouse :
-- "Au Pois Gourmand" - Restaurant gastronomique reconnu avec une note exceptionnelle de 4.8/5 sur plus de 4400 avis
-- "La Table Occitane" - Restaurant traditionnel proposant des spécialités toulousaines avec une note de 4.6/5 sur plus de 3200 avis
+- **Au Pois Gourmand** - Restaurant gastronomique avec une note de 4.8/5 sur plus de 4400 avis
+- **La Table Occitane** - Restaurant traditionnel proposant des spécialités toulousaines avec une note de 4.6/5 sur plus de 3200 avis
 
-## Fonctionnalités
-- Design responsive avec Bootstrap 5
-- Animations et effets visuels modernes
-- Navigation fixe avec effets de défilement
-- Présentation des restaurants et informations détaillées
-- Affichage des avis clients
-- Menu des spécialités culinaires
-- Section d'appel à l'action pour les réservations
-- Navigation entre les restaurants
-- Icônes Font Awesome
-- Optimisé pour mobile
+## ✨ Live Demo
+[Voir le site en ligne](https://github.com/gperret31/toulouse-restaurant-showcase)
 
-## Technologies utilisées
-- HTML5
-- CSS3
-- Bootstrap 5
-- JavaScript (effets de défilement)
-- Font Awesome
+## 📱 Responsive Design
+Le site est entièrement responsive et s'adapte parfaitement à tous les appareils :
+- Ordinateurs de bureau
+- Tablettes
+- Smartphones
+
+## 🌟 Fonctionnalités
+
+### Design et Interface
+- **Design entièrement responsive** avec Bootstrap 5
+- **Animations** au défilement et effets visuels modernes
+- **Interface utilisateur intuitive** pour une expérience fluide
+- **Thèmes visuels personnalisés** pour chaque restaurant (violet pour Au Pois Gourmand, marron pour La Table Occitane)
+
+### Éléments clés
+- **Navigation intelligente** avec menu sticky et liens d'ancrage fluides
+- **Cartes de menu interactives** avec effets hover
+- **Affichage des avis clients** dans des cartes modernes
+- **Formulaire de réservation** complet avec validation
+- **Galerie de spécialités culinaires** pour La Table Occitane
+- **Intégration des médias sociaux** dans le pied de page
+
+### Aspects techniques
+- **Composants Bootstrap** optimisés et personnalisés
+- **Animations optimisées** pour les performances
+- **Code modulaire et réutilisable** 
+- **Validation de formulaire** côté client
+- **Navigation inter-pages** facilitée
+
+## 🚀 Technologies utilisées
+- HTML5 sémantique
+- CSS3 (variables CSS, flexbox, grid)
+- Bootstrap 5 
+- JavaScript (animations, validation de formulaire)
+- Font Awesome (icônes)
 - Google Fonts
-- Design responsive
+- Animate.css
 
-## Installation et déploiement
+## 🛠️ Installation et déploiement
 1. Clonez ce dépôt: `git clone https://github.com/gperret31/toulouse-restaurant-showcase.git`
 2. Ouvrez le fichier `index.html` dans votre navigateur pour une prévisualisation locale
 3. Pour déployer, téléchargez les fichiers sur votre serveur web
 
-## Structure du projet
+## 📂 Structure du projet
 ```
 toulouse-restaurant-showcase/
 ├── index.html                # Page du restaurant Au Pois Gourmand
@@ -39,17 +64,16 @@ toulouse-restaurant-showcase/
 └── README.md                 # Documentation
 ```
 
-## Bonnes pratiques implémentées
-- **Framework Bootstrap** : Utilisation de Bootstrap 5 pour une mise en page responsive et moderne
-- **Composants réutilisables** : Cards, sections, navigation cohérente
-- **Sémantique HTML5** : Utilisation des balises sémantiques pour une meilleure accessibilité
-- **Performance** : Chargement optimisé des ressources
-- **Animations contrôlées** : Améliorent l'expérience utilisateur sans nuire à la performance
-- **Accessibilité** : Contraste des couleurs optimisé, textes alternatifs sur les images
-- **Navigation intuitive** : Liens entre les pages des restaurants pour une meilleure expérience utilisateur
+## 🔧 Bonnes pratiques implémentées
+- **HTML5 sémantique** pour une meilleure accessibilité et SEO
+- **Architecture CSS** organisée avec des variables et préfixes cohérents
+- **Design mobile-first** pour une expérience utilisateur optimale
+- **Performance optimisée** grâce à des animations conditionnelles
+- **Accessibilité améliorée** avec attributs ARIA et structure sémantique
+- **Code modulaire** facilitant la maintenance et l'évolution future
 
-## Licence
+## 📝 Licence
 Projet créé à des fins de démonstration.
 
-## Auteur
+## 👨‍💻 Auteur
 Développé par Claude en Mars 2025.
