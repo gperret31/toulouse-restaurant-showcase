@@ -91,6 +91,20 @@
             color: #5e2699;
             transform: translateY(-3px);
         }
+        .form-control:focus, .form-select:focus {
+            border-color: #5e2699;
+            box-shadow: 0 0 0 0.25rem rgba(94, 38, 153, 0.25);
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .modal-header {
+            background-color: #5e2699;
+            color: white;
+        }
+        .reservation-success {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -125,7 +139,7 @@
         <div class="container">
             <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeIn">Au Pois Gourmand</h1>
             <p class="lead mb-5 animate__animated animate__fadeIn">Une expérience gastronomique d'exception au cœur de Toulouse</p>
-            <a href="#contact" class="btn btn-light btn-lg px-5 py-3 fw-bold shadow animate__animated animate__fadeIn">Réserver une table</a>
+            <a href="#" class="btn btn-light btn-lg px-5 py-3 fw-bold shadow animate__animated animate__fadeIn" data-bs-toggle="modal" data-bs-target="#reservationModal">Réserver une table</a>
         </div>
     </section>
 
@@ -246,10 +260,109 @@
             <div class="bg-purple text-white p-5 rounded-4 shadow text-center">
                 <h2 class="mb-4">Envie de découvrir notre cuisine?</h2>
                 <p class="lead mb-4">Réservez dès maintenant pour vivre une expérience gastronomique inoubliable</p>
-                <a href="#" class="btn btn-light btn-lg px-5 fw-bold">Réserver une table</a>
+                <a href="#" class="btn btn-light btn-lg px-5 fw-bold" data-bs-toggle="modal" data-bs-target="#reservationModal">Réserver une table</a>
             </div>
         </div>
     </section>
+
+    <!-- Réservation Modal -->
+    <div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-purple text-white">
+                    <h5 class="modal-title" id="reservationModalLabel">Réserver une table - Au Pois Gourmand</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="reservationForm" class="needs-validation" novalidate>
+                        <div class="reservation-form">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nom complet</label>
+                                <input type="text" class="form-control" id="name" required>
+                                <div class="invalid-feedback">
+                                    Veuillez indiquer votre nom.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div class="invalid-feedback">
+                                    Veuillez indiquer un email valide.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Téléphone</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                                <div class="invalid-feedback">
+                                    Veuillez indiquer votre numéro de téléphone.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="guests" class="form-label">Nombre de personnes</label>
+                                <select class="form-select" id="guests" required>
+                                    <option value="" selected disabled>Sélectionnez</option>
+                                    <option value="1">1 personne</option>
+                                    <option value="2">2 personnes</option>
+                                    <option value="3">3 personnes</option>
+                                    <option value="4">4 personnes</option>
+                                    <option value="5">5 personnes</option>
+                                    <option value="6">6 personnes</option>
+                                    <option value="7">7 personnes</option>
+                                    <option value="8">8 personnes</option>
+                                    <option value="more">Plus de 8 personnes</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Veuillez sélectionner le nombre de personnes.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="date" required>
+                                <div class="invalid-feedback">
+                                    Veuillez sélectionner une date.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="time" class="form-label">Heure</label>
+                                <select class="form-select" id="time" required>
+                                    <option value="" selected disabled>Sélectionnez</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="21:30">21:30</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Veuillez sélectionner une heure.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="specialRequests" class="form-label">Demandes spéciales (optionnel)</label>
+                                <textarea class="form-control" id="specialRequests" rows="3"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="reservation-success text-center py-4">
+                            <div class="mb-3">
+                                <i class="fas fa-check-circle text-success fa-4x"></i>
+                            </div>
+                            <h3 class="mb-3">Réservation Confirmée!</h3>
+                            <p>Votre table a été réservée avec succès. Vous recevrez un mail de confirmation dans quelques minutes.</p>
+                        </div>
+                        
+                        <div class="text-end mt-4">
+                            <button type="submit" class="btn btn-purple px-4">Confirmer la réservation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-5">
@@ -302,6 +415,45 @@
                 navbar.style.padding = '16px 0';
                 navbar.style.boxShadow = 'none';
             }
+        });
+
+        // Form validation
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('reservationForm');
+            const formContent = document.querySelector('.reservation-form');
+            const successMessage = document.querySelector('.reservation-success');
+            
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                
+                if (!form.checkValidity()) {
+                    event.stopPropagation();
+                    form.classList.add('was-validated');
+                } else {
+                    // Simuler une soumission réussie
+                    formContent.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    
+                    // Reset form after 5 seconds if modal is still open
+                    setTimeout(function() {
+                        if (document.getElementById('reservationModal').classList.contains('show')) {
+                            form.reset();
+                            form.classList.remove('was-validated');
+                            formContent.style.display = 'block';
+                            successMessage.style.display = 'none';
+                        }
+                    }, 5000);
+                }
+            });
+            
+            // Reset form when modal is closed
+            const modal = document.getElementById('reservationModal');
+            modal.addEventListener('hidden.bs.modal', function () {
+                form.reset();
+                form.classList.remove('was-validated');
+                formContent.style.display = 'block';
+                successMessage.style.display = 'none';
+            });
         });
     </script>
 </body>
